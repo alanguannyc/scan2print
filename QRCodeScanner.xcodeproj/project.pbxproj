@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E7430FC12278D8B5003A66D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FC02278D8B5003A66D1 /* AppDelegate.swift */; };
-		E7430FC32278D8B5003A66D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FC22278D8B5003A66D1 /* ViewController.swift */; };
+		E7430FC32278D8B5003A66D1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FC22278D8B5003A66D1 /* ListViewController.swift */; };
 		E7430FC62278D8B5003A66D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7430FC42278D8B5003A66D1 /* Main.storyboard */; };
 		E7430FC82278D8B7003A66D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7430FC72278D8B7003A66D1 /* Assets.xcassets */; };
 		E7430FCB2278D8B7003A66D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7430FC92278D8B7003A66D1 /* LaunchScreen.storyboard */; };
+		E7430FD32278D950003A66D1 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FD22278D950003A66D1 /* QRViewController.swift */; };
+		E79B3C4D227CDD9800F22D7A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B3C4C227CDD9800F22D7A /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E7430FBD2278D8B5003A66D1 /* QRCodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7430FC02278D8B5003A66D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7430FC22278D8B5003A66D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7430FC22278D8B5003A66D1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E7430FC52278D8B5003A66D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7430FC72278D8B7003A66D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7430FCA2278D8B7003A66D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7430FCC2278D8B7003A66D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7430FD22278D950003A66D1 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		E79B3C4C227CDD9800F22D7A /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				E7430FC02278D8B5003A66D1 /* AppDelegate.swift */,
-				E7430FC22278D8B5003A66D1 /* ViewController.swift */,
 				E7430FC42278D8B5003A66D1 /* Main.storyboard */,
 				E7430FC72278D8B7003A66D1 /* Assets.xcassets */,
 				E7430FC92278D8B7003A66D1 /* LaunchScreen.storyboard */,
+				E7430FC22278D8B5003A66D1 /* ListViewController.swift */,
+				E7430FD22278D950003A66D1 /* QRViewController.swift */,
+				E79B3C4C227CDD9800F22D7A /* ContainerViewController.swift */,
 				E7430FCC2278D8B7003A66D1 /* Info.plist */,
 			);
 			path = QRCodeScanner;
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7430FC32278D8B5003A66D1 /* ViewController.swift in Sources */,
+				E7430FC32278D8B5003A66D1 /* ListViewController.swift in Sources */,
 				E7430FC12278D8B5003A66D1 /* AppDelegate.swift in Sources */,
+				E79B3C4D227CDD9800F22D7A /* ContainerViewController.swift in Sources */,
+				E7430FD32278D950003A66D1 /* QRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
