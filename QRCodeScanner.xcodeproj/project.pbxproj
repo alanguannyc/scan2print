@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C46BD36FE2B6B0B09718331D /* Pods_QRCodeScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE75E908EEA2C95EF58C62B /* Pods_QRCodeScanner.framework */; };
+		C7D97025227E086A00E360A5 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97024227E086A00E360A5 /* QRCode.swift */; };
+		C7D97027227E10F200E360A5 /* QRCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D97026227E10F200E360A5 /* QRCodeTableViewCell.swift */; };
 		E7430FC12278D8B5003A66D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FC02278D8B5003A66D1 /* AppDelegate.swift */; };
 		E7430FC32278D8B5003A66D1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7430FC22278D8B5003A66D1 /* ListViewController.swift */; };
 		E7430FC62278D8B5003A66D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7430FC42278D8B5003A66D1 /* Main.storyboard */; };
@@ -17,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EE75E908EEA2C95EF58C62B /* Pods_QRCodeScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61A0B52B371AA67747E0AFAD /* Pods-QRCodeScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeScanner/Pods-QRCodeScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		7CBC39B4843856BADE26FD7F /* Pods-QRCodeScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeScanner/Pods-QRCodeScanner.release.xcconfig"; sourceTree = "<group>"; };
+		C7D97024227E086A00E360A5 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		C7D97026227E10F200E360A5 /* QRCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTableViewCell.swift; sourceTree = "<group>"; };
 		E7430FBD2278D8B5003A66D1 /* QRCodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7430FC02278D8B5003A66D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7430FC22278D8B5003A66D1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46BD36FE2B6B0B09718331D /* Pods_QRCodeScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EE9E61428B7F3B7EE5083C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61A0B52B371AA67747E0AFAD /* Pods-QRCodeScanner.debug.xcconfig */,
+				7CBC39B4843856BADE26FD7F /* Pods-QRCodeScanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		928C77287747E4E10B82FF9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EE75E908EEA2C95EF58C62B /* Pods_QRCodeScanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7430FB42278D8B5003A66D1 = {
 			isa = PBXGroup;
 			children = (
 				E7430FBF2278D8B5003A66D1 /* QRCodeScanner */,
 				E7430FBE2278D8B5003A66D1 /* Products */,
+				6EE9E61428B7F3B7EE5083C8 /* Pods */,
+				928C77287747E4E10B82FF9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,9 +91,11 @@
 				E7430FC72278D8B7003A66D1 /* Assets.xcassets */,
 				E7430FC92278D8B7003A66D1 /* LaunchScreen.storyboard */,
 				E7430FC22278D8B5003A66D1 /* ListViewController.swift */,
+				C7D97026227E10F200E360A5 /* QRCodeTableViewCell.swift */,
 				E7430FD22278D950003A66D1 /* QRViewController.swift */,
 				E79B3C4C227CDD9800F22D7A /* ContainerViewController.swift */,
 				E7430FCC2278D8B7003A66D1 /* Info.plist */,
+				C7D97024227E086A00E360A5 /* QRCode.swift */,
 			);
 			path = QRCodeScanner;
 			sourceTree = "<group>";
@@ -77,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7430FCF2278D8B7003A66D1 /* Build configuration list for PBXNativeTarget "QRCodeScanner" */;
 			buildPhases = (
+				BDAA2E011998075EE03FF3DA /* [CP] Check Pods Manifest.lock */,
 				E7430FB92278D8B5003A66D1 /* Sources */,
 				E7430FBA2278D8B5003A66D1 /* Frameworks */,
 				E7430FBB2278D8B5003A66D1 /* Resources */,
+				34E6E6D7A5CADD644377D279 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +168,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34E6E6D7A5CADD644377D279 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QRCodeScanner/Pods-QRCodeScanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRCodeScanner/Pods-QRCodeScanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDAA2E011998075EE03FF3DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRCodeScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7430FB92278D8B5003A66D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +219,8 @@
 				E7430FC32278D8B5003A66D1 /* ListViewController.swift in Sources */,
 				E7430FC12278D8B5003A66D1 /* AppDelegate.swift in Sources */,
 				E79B3C4D227CDD9800F22D7A /* ContainerViewController.swift in Sources */,
+				C7D97027227E10F200E360A5 /* QRCodeTableViewCell.swift in Sources */,
+				C7D97025227E086A00E360A5 /* QRCode.swift in Sources */,
 				E7430FD32278D950003A66D1 /* QRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +365,7 @@
 		};
 		E7430FD02278D8B7003A66D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61A0B52B371AA67747E0AFAD /* Pods-QRCodeScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +384,7 @@
 		};
 		E7430FD12278D8B7003A66D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CBC39B4843856BADE26FD7F /* Pods-QRCodeScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

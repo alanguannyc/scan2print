@@ -9,11 +9,10 @@
 import UIKit
 import AVFoundation
 
-class QRViewController: UIViewController, DisplayQRcodeResultPro{
-    func displayQRCodeResult(_ Text: String) {
-        
-    }
+class QRViewController: UIViewController{
     
+    
+    @IBOutlet weak var testLabel: UILabel!
     
     @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var containerViewConstraint: NSLayoutConstraint!
@@ -23,15 +22,12 @@ class QRViewController: UIViewController, DisplayQRcodeResultPro{
     weak var ResultDelegate : DisplayQRcodeResultPro?
     
     @IBAction func buttonPressed(_ sender: Any) {
-            ResultDelegate?.displayQRCodeResult("555")
-        print("activated")
+        
         if (HideContainerView == true) {
             UIView.animate(withDuration: 1.0) {
                 self.ContainerView.transform = CGAffineTransform(translationX: 0, y: -175)
             }
-            
-            
-            
+
             HideContainerView = false
         } else {
             UIView.animate(withDuration: 1.0) {
@@ -53,8 +49,12 @@ class QRViewController: UIViewController, DisplayQRcodeResultPro{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.labelTapped(sender:)))
+        DetectLabel.isUserInteractionEnabled = true
+        DetectLabel.addGestureRecognizer(tap)
         
-//        CreateScannerFrame(View: view)
+        self.BaseView.addGestureRecognizer(tap)
+        
         let overlay = createOverlay(frame: view.frame, xOffset: 20, yOffset:20, radius: 20)
 //        view.addSubview(overlay)
         
@@ -99,16 +99,29 @@ class QRViewController: UIViewController, DisplayQRcodeResultPro{
         videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
-        
-        
+
         captureSession.startRunning()
 //        view.bringSubviewToFront(overlay)
-        
         view.bringSubviewToFront(DetectLabel)
+        
+        
         
     }
     
-
+    @objc func labelTapped(sender:UITapGestureRecognizer) {
+       
+        
+        UIView.animate(withDuration: 1.0) {
+            self.ContainerView.transform = self.HideContainerView ? CGAffineTransform(translationX: 0, y: -175) : CGAffineTransform(translationX: 0, y: 175)
+        }
+        
+        HideContainerView = !HideContainerView
+        
+        ResultDelegate?.hideKeyboard()
+        
+        ResultDelegate?.displayQRCodeResult("100")
+        
+    }
     
 
 }
@@ -162,8 +175,13 @@ func createOverlay(frame: CGRect,
     return overlayView
 }
 
+
+
 extension QRViewController: AVCaptureMetadataOutputObjectsDelegate{
+    
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
         
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
@@ -172,19 +190,18 @@ extension QRViewController: AVCaptureMetadataOutputObjectsDelegate{
         }
         
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        let tap = UITapGestureRecognizer(target: self, action: #selector(QRViewController.tapFunction))
-        DetectLabel.isUserInteractionEnabled = true
-        DetectLabel.addGestureRecognizer(tap)
+        
         
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             view.bringSubviewToFront(qrCodeFrameView!)
-            
+          
             if metadataObj.stringValue != nil {
                 DetectLabel.text = metadataObj.stringValue
-                
+//                ResultDelegate?.displayQRCodeResult(DetectLabel.text ?? " ")
+                ResultDelegate?.displayQRCodeResult("100")
             }
         }
         
@@ -193,8 +210,7 @@ extension QRViewController: AVCaptureMetadataOutputObjectsDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ContainerViewSegue") {
             let vc = segue.destination as! ContainerViewController
-            vc.ResultLabel?.text = "555"
-            print(vc.ResultLabel?.text)
+            self.ResultDelegate = vc
         }
     }
     
@@ -202,10 +218,7 @@ extension QRViewController: AVCaptureMetadataOutputObjectsDelegate{
         
     }
     
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
-        self.tabBarController?.selectedIndex = 2
-        print("tap working")
-    }
+    
     
 }
 
